@@ -22,7 +22,7 @@ const getItemData = function () {
       document.getElementById("name").innerText = item.name;
       document.getElementById("description").innerText = item.description;
       document.getElementById("price").innerText = item.price + "$";
-      document.getElementById("image-url").innerHTML = `${item.imageUrl}`;
+      document.getElementById("image-url").src = `${item.imageUrl}`;
     })
     .catch((err) => {
       console.log("ERRORE", err);

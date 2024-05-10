@@ -4,10 +4,10 @@ const generateCards = function (array) {
     const newCol = document.createElement("div");
     newCol.classList.add("col");
     newCol.innerHTML = `
-    <div class="card"">
+    <div class="card">
       <img src="${item.imageUrl}" class="card-img-top" alt="product image">
-      <div class="card-body">
-        <h5 class="card-title">${item.name}</h5>=
+      <div class="card-body d-flex flex-column justify-content-between ">
+        <h5 class="card-title">${item.name}</h5>
         <p class="card-text">${item.brand}</p>
         <p class="card-text">${item.description}</p>
         <div class='d-flex gap-3'> 

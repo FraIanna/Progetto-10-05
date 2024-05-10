@@ -55,24 +55,23 @@ const generateList = function (array) {
   const ul = document.getElementById("list-item");
   array.forEach((item) => {
     const newLi = document.createElement("li");
-    newLi.classList.add("list");
+    newLi.classList.add("py-3");
     newLi.innerHTML = `
     <div class="d-flex gap-3 justify-content-between">
-    <div> 
-        <img src="${item.imageUrl}" alt="product image">
+    <div class='w-25' > 
+        <img src="${item.imageUrl}" alt="product image" class='w-100'>
     </div>
     <div class="d-flex gap-5">
-        <p>Nome : ${item.name}</p>
+        <p>Nome: ${item.name}</p>
         <p>Brand: ${item.brand}</p>
         <p>Descrizione: ${item.description}</p>
         <p> Price: ${item.price}$ </p> 
     </div> 
-    <div> 
+    <div class='d-flex align-items-start gap-2'> 
     <a href="backoffice.html?id=${item._id}" class="btn btn-outline-warning"> Modify </a>
-    <a href="backoffice.html?id=${item._id}" class="btn btn-outline-danger" id='delete-btn'> Delete </a>
+    <button class="btn btn-outline-danger" id='delete-btn' onclick='deleteItem()'> Delete </button>
     </div>    
   </div>
-
     `;
     ul.appendChild(newLi);
   });
@@ -163,8 +162,6 @@ const deleteItem = function () {
       console.log("ERRORE", err);
     });
 };
-
-document.getElementById("delete-btn").addEventListener("click", deleteItem);
 
 if (itemId) {
   getItemData();
